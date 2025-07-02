@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { searchMovies } from "../api/api";
-import axios from "axios";
-
-const API_KEY = "8517144c199ceff85f7a2ec4d03a8641";
-const BASE_URL = "https://api.themoviedb.org/3";
+import { debounce } from "../utils/debounce";
 
 const SearchBar = ({
   className = "",
@@ -15,24 +12,27 @@ const SearchBar = ({
   const [term, setTerm] = useState("");
   const navigate = useNavigate();
 
+  const debouncedFetch = useMemo(
+    () =>
+      debounce(async (query) => {
+        if (!showInlineResults || !query.trim()) {
+          setResults?.([]);
+          return;
+        }
+
+        try {
+          const res = await searchMovies(query);
+          setResults?.(res.data.results.slice(0, 5));
+        } catch (err) {
+          console.error("Live search error:", err);
+        }
+      }, 300),
+    [showInlineResults, setResults]
+  );
+
   useEffect(() => {
-    const fetchQuickSearch = async () => {
-      if (!showInlineResults || !term.trim()) {
-        setResults?.([]);
-        return;
-      }
-
-      try {
-        const res = await searchMovies(term);
-        setResults?.(res.data.results.slice(0, 5)); // Only show top 5
-      } catch (err) {
-        console.error("Live search error:", err);
-      }
-    };
-
-    const debounce = setTimeout(fetchQuickSearch, 300);
-    return () => clearTimeout(debounce);
-  }, [term]);
+    debouncedFetch(term);
+  }, [term, debouncedFetch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

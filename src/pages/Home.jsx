@@ -120,7 +120,7 @@ const Home = () => {
             <img
               src={`https://image.tmdb.org/t/p/original${heroMovie.backdrop_path}`}
               alt={heroMovie.title}
-              className="w-full h-full object-cover object-right"
+              className="w-full h-full object-cover object-center md:object-[50%_30%]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
           </div>

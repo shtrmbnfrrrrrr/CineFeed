@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getMovieById } from "../api/api";
 import { useLocalStorageList } from "../hooks/useLocalStorageList";
+import { formatRating, formatGenres } from "../utils/apiHelpers";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -67,11 +68,11 @@ const MovieDetail = () => {
         </p>
         <p>
           <span className="text-zinc-400">Rating:</span>{" "}
-          {movie.vote_average.toFixed(2)} / 10 ⭐
+          {formatRating(movie.vote_average)}
         </p>
         <p>
           <span className="text-zinc-400">Genres:</span>{" "}
-          {movie.genres.map((g) => g.name).join(", ")}
+          {formatGenres(movie.genres)}
         </p>
       </div>
 
