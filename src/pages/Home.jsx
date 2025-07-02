@@ -112,7 +112,10 @@ const Home = () => {
 
       {/* Hero */}
       {heroMovie && (
-        <section className="relative bg-black rounded-xl overflow-hidden mb-6 h-64 md:h-80 lg:h-140">
+        <section
+          className="relative bg-black rounded-xl overflow-hidden mb-6 h-64 md:h-80 lg:h-140
+             pt-16 md:pt-0"
+        >
           <div className="absolute inset-0">
             <img
               src={`https://image.tmdb.org/t/p/original${heroMovie.backdrop_path}`}

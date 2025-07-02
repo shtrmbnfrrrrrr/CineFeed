@@ -1,4 +1,3 @@
-
 # 🎬 **CINEFEED**
 
 _Transforming Movie Discovery into an Epic Experience_
@@ -38,11 +37,11 @@ It leverages **Vite** for fast builds, **Tailwind CSS** for utility-first stylin
 This project streamlines the development of feature-rich movie apps, enabling rapid iteration and clean architecture.  
 The core features include:
 
-- 🎨🚀 **Fast Development**: Utilizes Vite for quick builds and hot module replacement for seamless updates  
-- 🧩🛠️ **Modular Architecture**: Supports routing, API abstraction, and reusable components for scalable code  
-- 💅🎯 **Modern Styling**: Integrates Tailwind CSS for consistent, utility-first design  
-- 🔍📈 **Developer-Friendly**: Comes with ESLint configuration and a structured setup to ensure code quality  
-- 📦🔗 **Easy Integration**: Simplifies connecting to external APIs like The Movie Database for dynamic content  
+- 🎨🚀 **Fast Development**: Utilizes Vite for quick builds and hot module replacement for seamless updates
+- 🧩🛠️ **Modular Architecture**: Supports routing, API abstraction, and reusable components for scalable code
+- 💅🎯 **Modern Styling**: Integrates Tailwind CSS for consistent, utility-first design
+- 🔍📈 **Developer-Friendly**: Comes with ESLint configuration and a structured setup to ensure code quality
+- 📦🔗 **Easy Integration**: Simplifies connecting to external APIs like The Movie Database for dynamic content
 
 ---
 
@@ -54,7 +53,7 @@ The core features include:
 
 This project requires the following dependencies:
 
-- Programming Language: **JavaScript**  
+- Programming Language: **JavaScript**
 - Package Manager: **npm**
 
 ---
@@ -102,5 +101,3 @@ npm test
 ```
 
 ---
-
-⬆️ Return
