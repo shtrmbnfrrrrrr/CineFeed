@@ -4,14 +4,14 @@ import SearchBar from "./SearchBar";
 const Header = ({ showSearch, inlineResults, setInlineResults }) => {
   return (
     <header className="fixed top-0 z-50 w-full px-1 py-3 flex items-center justify-between bg-zinc-900">
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 sm:gap-6">
         <Link
           to="/"
           className="text-xl font-bold text-white hover:text-red-500 transition"
         >
           CineFeed
         </Link>
-        <nav className="flex items-center gap-6 text-sm text-zinc-300">
+        <nav className="flex items-center gap-4 sm:gap-6 text-sm text-zinc-300">
           <Link to="/favorites" className="hover:text-white transition">
             Favorites
           </Link>
