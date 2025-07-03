@@ -52,7 +52,7 @@ const MovieDetail = () => {
         <img
           src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
           alt={movie.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center md:object-[50%_30%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
           <h1 className="text-4xl font-bold">{movie.title}</h1>
